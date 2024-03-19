@@ -49,9 +49,9 @@ RUN pip install --upgrade pip && \
     pip install neo4j pandas pyarrow requests
 
 # Run the data loader script
-RUN chmod +x /graph_process/data_loader.py && \
+RUN chmod +x /graph_process/implementation/data_loader.py && \
     neo4j start && \
-    python3 data_loader.py && \
+    python3 /graph_process/implementation/data_loader.py && \
     neo4j stop
 
 # Expose neo4j ports
